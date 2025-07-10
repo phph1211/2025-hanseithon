@@ -20,7 +20,7 @@ export const Navbar: React.FC<NavbarProps> = ({ menu, actions }) => {
       <S.NavbarInnerContainer showLinkInMobile={isTeamRoutes}>
         <S.NavbarBrandLink href="/">
           <S.NavbarBrandText>HANSEITHON</S.NavbarBrandText>
-          <S.NavbarBrandSubText>6TH HANSEI HACKATHON</S.NavbarBrandSubText>
+          <S.NavbarBrandSubText>8TH HANSEI HACKATHON</S.NavbarBrandSubText>
         </S.NavbarBrandLink>
 
         <S.NavbarMenuList>
