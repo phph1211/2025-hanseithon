@@ -13,7 +13,7 @@ export const HanseithonSection: React.FC<HanseithonSectionProps> = ({ records })
     <section>
       <S.HanseithonSectionInnerContainer>
         <S.HanseithonSectionSectionTitle>
-          드디어 6주년을 <br className="mobile-only" />
+          드디어 8주년을 <br className="mobile-only" />
           맞이한, 한세톤
         </S.HanseithonSectionSectionTitle>
         <S.HanseithonSectionSectionDescription>

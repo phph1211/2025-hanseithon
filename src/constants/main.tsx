@@ -27,7 +27,7 @@ export const MAIN_SECTIONS = {
     {
       emoji: "🌈",
       name: "운영 기간",
-      value: { from: 0, to: 6, suffix: "회차" },
+      value: { from: 0, to: 8, suffix: "회차" },
       description: "2018년부터",
     },
     {
