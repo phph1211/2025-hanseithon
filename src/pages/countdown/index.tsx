@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { CountdownCircleTimer } from "react-countdown-circle-timer";
 
 import { PageLayout } from "src/components/layouts";
+import { COLOR_LIST, COLORS_TIME } from "src/constants/timer";
 
 import * as S from "./styled";
 
@@ -35,14 +36,15 @@ export default function CountDownPage() {
           isPlaying
           duration={86400} // 24h
           initialRemainingTime={remainingTime}
-          colors="#CCCCCC"
+          colors={COLOR_LIST}
+          colorsTime={COLORS_TIME.HOURS}
           size={300}
           strokeWidth={16}
         >
           {() => (
             <S.CountTextWrapper>
               <S.CountText>{String(hours).padStart(2, "0")}</S.CountText>
-              <S.CountText>Hours</S.CountText>
+              {/* <S.CountText>Hours</S.CountText> */}
             </S.CountTextWrapper>
           )}
         </CountdownCircleTimer>
@@ -51,14 +53,15 @@ export default function CountDownPage() {
           isPlaying
           duration={3600}
           initialRemainingTime={remainingTime % 3600}
-          colors="#888888"
+          colors={COLOR_LIST}
+          colorsTime={COLORS_TIME.MINUTES}
           size={300}
           strokeWidth={16}
         >
           {() => (
             <S.CountTextWrapper>
               <S.CountText>{String(minutes).padStart(2, "0")}</S.CountText>
-              <S.CountText>Minutes</S.CountText>
+              {/* <S.CountText>Minutes</S.CountText> */}
             </S.CountTextWrapper>
           )}
         </CountdownCircleTimer>
@@ -67,14 +70,15 @@ export default function CountDownPage() {
           isPlaying
           duration={60}
           initialRemainingTime={remainingTime % 60}
-          colors="#444444"
+          colors={COLOR_LIST}
+          colorsTime={COLORS_TIME.SECONDS}
           size={300}
           strokeWidth={16}
         >
           {() => (
             <S.CountTextWrapper>
               <S.CountText>{String(seconds).padStart(2, "0")}</S.CountText>
-              <S.CountText>Seconds</S.CountText>
+              {/* <S.CountText>Seconds</S.CountText> */}
             </S.CountTextWrapper>
           )}
         </CountdownCircleTimer>

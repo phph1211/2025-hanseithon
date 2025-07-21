@@ -19,14 +19,14 @@ export const CountText = styled.div`
   align-items: center;
   color: white;
   font-weight: bold;
-  font-size: 4vw;
+  font-size: 6vw;
 
   @media (min-width: 768px) {
-    font-size: 3vw;
+    font-size: 5vw;
   }
 
   @media (min-width: 1024px) {
-    font-size: 3vw;
+    font-size: 5vw;
   }
 `;
 
