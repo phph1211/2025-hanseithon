@@ -21,8 +21,8 @@ export default function SchedulesPage() {
 
   const [now, setNow] = useState(dayjs());
   const activeDate = useMemo(() => {
-    if (now.isBetween("2023-07-20", "2023-07-21", "date", "[]")) return date || now.format("MM/DD");
-    return date || "07/20";
+    if (now.isBetween("2025-07-24", "2025-07-25", "date", "[]")) return date || now.format("MM/DD");
+    return date || "07/24";
   }, [now, date]);
   const activeSchedule = useMemo(
     () => DAY_DATE.find(({ date }) => date.format("MM/DD") === activeDate)?.schedules || [],

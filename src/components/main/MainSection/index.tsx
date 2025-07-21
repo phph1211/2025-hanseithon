@@ -44,7 +44,7 @@ export const MainSection: React.FC<MainSectionProps> = ({
             },
           }}
         >
-          6TH
+          8TH
           <br />
           HANSEITHON
         </S.MainSectionTitle>

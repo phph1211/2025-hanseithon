@@ -2,14 +2,14 @@ import { DefaultSeoProps } from "next-seo";
 
 export const DEFAULT_SEO: DefaultSeoProps = {
   title: "제 8회 한세톤 | 한울",
-  description: "7.20 - 7.21 이틀동안 진행되는 한세톤에 지금 참여하세요!",
+  description: "7.24 - 7.25 이틀동안 진행되는 한세톤에 지금 참여하세요!",
   canonical: "https://hanseithon.com",
   openGraph: {
     type: "website",
     locale: "ko_KR",
     url: "https://hanseithon.com",
     title: "제 8회 한세톤 | 한울",
-    description: "7.20 - 7.21 이틀동안 진행되는 한세톤에 지금 참여하세요!",
+    description: "7.24 - 7.25 이틀동안 진행되는 한세톤에 지금 참여하세요!",
     siteName: "제 8회 한세톤 | 한울",
     images: [
       {

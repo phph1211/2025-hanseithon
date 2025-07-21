@@ -1,12 +1,4 @@
-import {
-  CodingAppleLogoPNG,
-  EasyspubLogoPNG,
-  GilbutHorizontalLogoPNG,
-  HANSEITHON_IMAGES,
-  HanbitMediaLogoPNG,
-  JpubLogoPNG,
-  KoscomLogoPNG,
-} from "src/assets";
+import { HANSEITHON_IMAGES, JpubLogoPNG, TWIGLOGOPNG, UNITYLOGOPNG } from "src/assets";
 import { FAQSectionProps } from "src/components/main/FAQSection";
 import { HanseithonSectionProps } from "src/components/main/HanseithonSection";
 import { ImageBannerSection } from "src/components/main/ImageBannerSection";
@@ -14,14 +6,14 @@ import { ParagraphSectionProps } from "src/components/main/ParagraphSection";
 import { SponsorsSectionProps } from "src/components/main/SponsorsSection";
 
 export const MAIN_SECTIONS = {
-  OPERATION_PERIOD: "JULY 20 - JULY 21",
+  OPERATION_PERIOD: "JULY 24 - JULY 25",
   APPLICATION_PERIOD: "7. 10 ~ 7. 17",
 
   HANSEITHON_RECORDS: [
     {
       emoji: "😎",
       name: "누적 참여 학생",
-      value: { from: 0, to: 230, suffix: "명 +" },
+      value: { from: 0, to: 250, suffix: "명 +" },
       description: "",
     },
     {
@@ -45,34 +37,19 @@ export const MAIN_SECTIONS = {
 
   SPONSORS: [
     {
-      name: "이지스퍼블리싱",
-      logo: EasyspubLogoPNG,
-      url: "http://www.easyspub.co.kr/Main/pub",
-    },
-    {
-      name: "코딩애플",
-      logo: CodingAppleLogoPNG,
-      url: "https://codingapple.com",
-    },
-    {
-      name: "길벗",
-      logo: GilbutHorizontalLogoPNG,
-      url: "https://www.gilbut.co.kr",
-    },
-    {
       name: "제이펍",
       logo: JpubLogoPNG,
       url: "https://jpub.tistory.com/",
     },
     {
-      name: "(주) 코스콤",
-      logo: KoscomLogoPNG,
-      url: "https://www.koscom.co.kr/",
+      name: "티더블유아이지",
+      logo: TWIGLOGOPNG,
+      url: "https://twig-officialblog.tistory.com/",
     },
     {
-      name: "한빛 미디어",
-      logo: HanbitMediaLogoPNG,
-      url: "https://www.hanbit.co.kr",
+      name: "유니티",
+      logo: UNITYLOGOPNG,
+      url: "https://unity.com/kr",
     },
   ] as SponsorsSectionProps["sponsors"],
 
@@ -105,8 +82,7 @@ export const MAIN_SECTIONS = {
     },
     {
       question: "Chat GPT와 Bard 같은 AI 사용이 가능한가요?",
-      answer:
-        "밤새 진행하며 스스로의 힘으로 완성한다는 취지의 해커톤으로서, AI 서비스는 이용할 수 없어요",
+      answer: "가능합니다!",
     },
     {
       question: "대회장에 반입 할 수 없는 물건이 있나요?",

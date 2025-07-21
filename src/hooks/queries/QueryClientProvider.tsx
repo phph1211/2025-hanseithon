@@ -15,10 +15,5 @@ export const QueryClientProvider: React.FC<QueryClientProviderProps> = ({ childr
     () => new QueryClient({ defaultOptions: { queries: { retry: 0 } } })
   );
 
-  return (
-    <TanStackQueryClientProvider client={queryClient}>
-      {children}
-      <ReactQueryDevtools initialIsOpen={false} />
-    </TanStackQueryClientProvider>
-  );
+  return <TanStackQueryClientProvider client={queryClient}>{children}</TanStackQueryClientProvider>;
 };

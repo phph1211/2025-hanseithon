@@ -36,7 +36,7 @@ export const SponsorsSection: React.FC<SponsorsSectionProps> = ({ sponsors }) =>
                       key={i}
                       src={logo}
                       alt={name}
-                      style={{ width: "100%", height: "auto" }}
+                      style={{ width: "100%", height: "auto", borderRadius: 13 }}
                       quality={100}
                     />
                   </S.SponsorLogoWrapper>

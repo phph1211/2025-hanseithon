@@ -24,7 +24,11 @@ export const SponsorCard: React.FC<SponsorCardProps> = ({ name, description, log
       onMouseLeave={!isMobile ? () => setIsHover(false) : undefined}
     >
       <S.SponsorCardLogoLayer>
-        <Image src={logo} alt={`${name} 로고`} style={{ width: "100%", height: "auto" }} />
+        <Image
+          src={logo}
+          alt={`${name} 로고`}
+          style={{ width: "100%", height: "auto", borderRadius: 13 }}
+        />
       </S.SponsorCardLogoLayer>
 
       <S.SponsorCardDetailLayer
