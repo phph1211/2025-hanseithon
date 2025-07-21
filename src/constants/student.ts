@@ -9,25 +9,22 @@ export const STUDENT_GRADE = {
 
 export const STUDENT_DEPARTMENT = {
   CLOUD: "클라우드보안과",
-  NETWORK: "네트워크보안과",
-  HACKING: "해킹보안과",
   META: "메타버스게임과",
-  GAME: "게임과",
+  SOFT: "지능형소프트웨어과",
 } as const;
 
 export const STUDENT_CLASSES: Record<StudentGrade, Partial<Record<StudentDepartment, number[]>>> = {
   1: {
     CLOUD: [1, 2],
     META: [1, 2],
+    SOFT: [1, 2],
   },
   2: {
     CLOUD: [1, 2],
-    NETWORK: [1],
-    META: [1],
+    META: [1, 2],
   },
   3: {
-    HACKING: [1, 2],
-    NETWORK: [1],
-    GAME: [1],
+    CLOUD: [1, 2],
+    META: [1, 2],
   },
 };

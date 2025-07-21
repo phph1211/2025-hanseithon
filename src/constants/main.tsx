@@ -6,7 +6,7 @@ import { ParagraphSectionProps } from "src/components/main/ParagraphSection";
 import { SponsorsSectionProps } from "src/components/main/SponsorsSection";
 
 export const MAIN_SECTIONS = {
-  OPERATION_PERIOD: "JULY 24 - JULY 25",
+  OPERATION_PERIOD: "JULY 23 - JULY 24",
   APPLICATION_PERIOD: "7. 10 ~ 7. 17",
 
   HANSEITHON_RECORDS: [
