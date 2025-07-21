@@ -1,17 +1,12 @@
 import styled from "@emotion/styled";
 
-export const TimersWrapper = styled.div`
-  display: flex;
-  gap: 20px;
-`;
-
 export const CountDownContainer = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
   height: 60vh;
   padding: 1rem;
-  gap: 3rem;
+  gap: 8rem;
 `;
 
 export const CountText = styled.div`

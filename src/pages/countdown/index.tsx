@@ -9,6 +9,7 @@ import * as S from "./styled";
 type CountdownCircleTimerProps = {
   KEY: [number, number, number];
   DURATION: [number, number, number];
+  INIT_REMAINING_TIME: [number, number, number];
   COLORS_TIME: [number, number, number, number, number][];
   TEXT: [string, string, string];
 };
@@ -18,7 +19,7 @@ export default function CountDownPage() {
     const now = new Date();
     const target = new Date();
 
-    target.setHours(22, 0, 0, 0);
+    target.setHours(14, 0, 0, 0);
 
     if (now >= target) {
       target.setDate(target.getDate() + 1);
@@ -45,9 +46,10 @@ export default function CountDownPage() {
   const minutesCountText = String(minutes).padStart(2, "0");
   const secondsCountText = String(seconds).padStart(2, "0");
 
-  const COUNTDOWN_TIMER_CONSTANT_ARRAY: CountdownCircleTimerProps = {
+  const COUNTDOWN_TIMER_OBJ: CountdownCircleTimerProps = {
     KEY: [hours, minutes, seconds],
     DURATION: [86400, 3600, 60],
+    INIT_REMAINING_TIME: [remainingTime % 86400, remainingTime % 3600, remainingTime % 60],
     COLORS_TIME: [
       [86400, 64800, 43200, 21600, 0],
       [3600, 2700, 1800, 900, 0],
@@ -59,18 +61,18 @@ export default function CountDownPage() {
   return (
     <PageLayout title={""} description={""}>
       <S.CountDownContainer>
-        {COUNTDOWN_TIMER_CONSTANT_ARRAY.KEY.map((item, index) => (
+        {COUNTDOWN_TIMER_OBJ.KEY.map((item, index) => (
           <CountdownCircleTimer
             key={item}
             isPlaying
-            duration={COUNTDOWN_TIMER_CONSTANT_ARRAY.DURATION[index]} // 24h
-            initialRemainingTime={remainingTime}
+            duration={COUNTDOWN_TIMER_OBJ.DURATION[index]} // 24h
+            initialRemainingTime={COUNTDOWN_TIMER_OBJ.INIT_REMAINING_TIME[index]}
             colors={["#0E69F1", "#3A7BF4", "#6590F6", "#8FA5F8", "#BAD9FF"]}
-            colorsTime={COUNTDOWN_TIMER_CONSTANT_ARRAY.COLORS_TIME[index]}
-            size={300}
-            strokeWidth={16}
+            colorsTime={COUNTDOWN_TIMER_OBJ.COLORS_TIME[index]}
+            size={350}
+            strokeWidth={20}
           >
-            {() => <S.CountText>{COUNTDOWN_TIMER_CONSTANT_ARRAY.TEXT[index]}</S.CountText>}
+            {() => <S.CountText>{COUNTDOWN_TIMER_OBJ.TEXT[index]}</S.CountText>}
           </CountdownCircleTimer>
         ))}
       </S.CountDownContainer>
