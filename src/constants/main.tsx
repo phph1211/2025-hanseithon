@@ -82,7 +82,7 @@ export const MAIN_SECTIONS = {
     },
     {
       question: "Chat GPT와 Bard 같은 AI 사용이 가능한가요?",
-      answer: "가능합니다!",
+      answer: "가능합니다! AI를 사용해 효율적으로 코드를 작성해 보세요",
     },
     {
       question: "대회장에 반입 할 수 없는 물건이 있나요?",
