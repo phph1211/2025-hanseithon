@@ -1,61 +1,72 @@
 import React, { useEffect, useState } from "react";
-
-import { PageLayout } from "src/components/layouts";
-
-import * as S from "./styled";
+import { CountdownCircleTimer } from "react-countdown-circle-timer";
 
 export default function CountDownPage() {
-  const calculateTimeLeft = () => {
+  const getSecondsUntilTarget = () => {
     const now = new Date();
-
     const target = new Date();
-    target.setHours(14, 0, 0, 0);
+    target.setHours(22, 0, 0, 0); // 매일 오후 2시
 
     if (now >= target) {
       target.setDate(target.getDate() + 1);
     }
 
-    const diffInSeconds = Math.floor((target.getTime() - now.getTime()) / 1000);
-    return diffInSeconds;
+    return Math.floor((target.getTime() - now.getTime()) / 1000);
   };
 
-  const [timeLeft, setTimeLeft] = useState(calculateTimeLeft());
+  const [remainingTime, setRemainingTime] = useState(getSecondsUntilTarget());
 
   useEffect(() => {
-    const timer = setInterval(() => {
-      setTimeLeft((prev) => {
-        if (prev <= 1) {
-          clearInterval(timer);
-          return 0;
-        }
-        return prev - 1;
-      });
+    const interval = setInterval(() => {
+      setRemainingTime((prev) => (prev > 0 ? prev - 1 : 0));
     }, 1000);
-
-    return () => clearInterval(timer);
+    return () => clearInterval(interval);
   }, []);
 
-  const formatTime = (seconds: number) => {
-    const h = String(Math.floor(seconds / 3600)).padStart(2, "0");
-    const m = String(Math.floor((seconds % 3600) / 60)).padStart(2, "0");
-    const s = String(seconds % 60).padStart(2, "0");
-    return `${h}:${m}:${s}`;
-  };
+  const hours = Math.floor(remainingTime / 3600);
+  const minutes = Math.floor((remainingTime % 3600) / 60);
+  const seconds = remainingTime % 60;
 
   return (
-    <PageLayout title={""} description={""}>
-      <S.CountDownContainer>
-        <S.CountText>
-          {formatTime(timeLeft)
-            .split(":")
-            .map((part, idx, arr) => (
-              <React.Fragment key={idx}>
-                <span className="number">{part}</span>
-                {idx < arr.length - 1 && <span className="colon">:</span>}
-              </React.Fragment>
-            ))}
-        </S.CountText>
-      </S.CountDownContainer>
-    </PageLayout>
+    <div style={{ display: "flex", gap: "20px", justifyContent: "center" }}>
+      {/* Hours */}
+      <CountdownCircleTimer
+        key={hours}
+        isPlaying
+        duration={24}
+        initialRemainingTime={hours}
+        colors="#004777"
+        size={100}
+        strokeWidth={8}
+      >
+        {() => <div>{String(hours).padStart(2, "0")}h</div>}
+      </CountdownCircleTimer>
+
+      {/* Minutes */}
+      <CountdownCircleTimer
+        key={minutes}
+        isPlaying
+        duration={60}
+        initialRemainingTime={minutes}
+        colors="#F7B801"
+        size={100}
+        strokeWidth={8}
+      >
+        {() => <div>{String(minutes).padStart(2, "0")}m</div>}
+      </CountdownCircleTimer>
+
+      {/* Seconds */}
+      <CountdownCircleTimer
+        key={seconds}
+        isPlaying
+        duration={60}
+        initialRemainingTime={seconds}
+        colors="#A30000"
+        size={100}
+        strokeWidth={8}
+      >
+        {() => <div>{String(seconds).padStart(2, "0")}s</div>}
+      </CountdownCircleTimer>
+    </div>
   );
 }
