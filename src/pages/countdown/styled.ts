@@ -11,6 +11,7 @@ export const CountDownContainer = styled.div`
   align-items: center;
   height: 60vh;
   padding: 1rem;
+  gap: 3rem;
 `;
 
 export const CountText = styled.div`
@@ -18,28 +19,19 @@ export const CountText = styled.div`
   align-items: center;
   color: white;
   font-weight: bold;
-  font-size: 10vw;
+  font-size: 4vw;
 
   @media (min-width: 768px) {
-    font-size: 8vw;
+    font-size: 3vw;
   }
 
   @media (min-width: 1024px) {
-    font-size: 8vw;
+    font-size: 3vw;
   }
+`;
 
-  .number,
-  .colon {
-    display: inline-block;
-    width: 1.2ch;
-    text-align: center;
-  }
-
-  .number {
-    margin: 2rem;
-  }
-
-  .colon {
-    margin: 2rem;
-  }
+export const CountTextWrapper = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 `;
