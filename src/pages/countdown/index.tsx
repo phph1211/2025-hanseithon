@@ -1,13 +1,10 @@
-import React, { useEffect, useState } from "react";
-
-import { PageLayout } from "src/components/layouts";
+import React, { useState, useEffect } from "react";
 
 import * as S from "./styled";
 
 export default function CountDownPage() {
   const calculateTimeLeft = () => {
     const now = new Date();
-
     const target = new Date();
     target.setHours(14, 0, 0, 0);
 
@@ -39,23 +36,36 @@ export default function CountDownPage() {
     const h = String(Math.floor(seconds / 3600)).padStart(2, "0");
     const m = String(Math.floor((seconds % 3600) / 60)).padStart(2, "0");
     const s = String(seconds % 60).padStart(2, "0");
-    return `${h}:${m}:${s}`;
+    return [h, m, s];
   };
 
+  const [h, m, s] = formatTime(timeLeft);
+
   return (
-    <PageLayout title={""} description={""}>
-      <S.CountDownContainer>
+    <S.MainSection>
+      <S.MainSectionContentContainer>
+        <S.OperationPeriod
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ delay: 1.4, duration: 0.3 }}
+        />
+        <S.ApplicationPeriod
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ delay: 1.4, duration: 0.3 }}
+        />
         <S.CountText>
-          {formatTime(timeLeft)
-            .split(":")
-            .map((part, idx, arr) => (
-              <React.Fragment key={idx}>
-                <span className="number">{part}</span>
-                {idx < arr.length - 1 && <span className="colon">:</span>}
-              </React.Fragment>
-            ))}
+          <span className="time-part">{h}h</span>
+          <span className="colon"> : </span>
+          <span className="time-part">{m}m</span>
+          <span className="colon"> : </span>
+          <span className="time-part">{s}s</span>
         </S.CountText>
-      </S.CountDownContainer>
-    </PageLayout>
+      </S.MainSectionContentContainer>
+
+      <S.MainSectionLayer>
+        <img src="/static/hanseithonMain.png" alt="" />
+      </S.MainSectionLayer>
+    </S.MainSection>
   );
 }
