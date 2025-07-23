@@ -8,7 +8,7 @@ interface ScheduleData {
 
 export const THURSDAY_SCHEDULE_ARRAY: ScheduleData[] = [
   {
-    startAt: dayjs("2025-07-23 14:30:00"),
+    startAt: dayjs("2025-07-23 13:30:00"),
     endAt: dayjs("2025-07-23 15:00:00"),
     schedule: "참가자 입장 및 등록",
   },
