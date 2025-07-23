@@ -58,11 +58,11 @@ export default function CountDownPage() {
         <S.TimeLabel>{timeLeft <= 0 ? "종료되었습니다" : "남은시간"}</S.TimeLabel>
 
         <S.CountText>
-          <span className="time-part">{h}h</span>
+          <span className="time-part">{h}</span>
           <span className="colon"> : </span>
-          <span className="time-part">{m}m</span>
+          <span className="time-part">{m}</span>
           <span className="colon"> : </span>
-          <span className="time-part">{s}s</span>
+          <span className="time-part">{s}</span>
         </S.CountText>
       </S.MainSectionContentContainer>
 

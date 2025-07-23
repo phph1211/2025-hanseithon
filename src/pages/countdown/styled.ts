@@ -151,7 +151,7 @@ export const TimeLabel = styled.p`
   font-size: 5rem;
   font-weight: 200;
   text-align: center;
-  margin-bottom: 1.2rem;
+  margin-bottom: 1.5rem;
 
   @media screen and (max-width: 767px) {
     font-size: 1.8rem;
