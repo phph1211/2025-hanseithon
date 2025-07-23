@@ -62,20 +62,20 @@ export const AppLayout: React.FC<AppLayoutProps> = ({ children }) => {
   return (
     <>
       <Navbar
-        menu={isTeamRoutes ? NAVBAR_MENU_IN_TEAM_ROUTES(profile) : NAVBAR_MENU}
-        actions={[
-          isTeamRoutes
-            ? {
-                size: "small",
-                text: `${profile?.name || ""}님, 환영해요`,
-                onClick: () => toast("🎉 제 8회 한세톤 기대해주세요!"),
-              }
-            : {
-                size: "small",
-                text: "한세톤 참여하기",
-                href: profile ? "/teams" : "/auth/register",
-              },
-        ]}
+        menu={NAVBAR_MENU}
+        // actions={[
+        //   isTeamRoutes
+        //     ? {
+        //         size: "small",
+        //         text: `${profile?.name || ""}님, 환영해요`,
+        //         onClick: () => toast("🎉 제 8회 한세톤 기대해주세요!"),
+        //       }
+        //     : {
+        //         size: "small",
+        //         text: "한세톤 참여하기",
+        //         href: profile ? "/teams" : "/auth/register",
+        //       },
+        // ]}
       />
 
       {isLoading ? (
