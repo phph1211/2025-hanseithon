@@ -17,6 +17,8 @@ export default function CountDownPage() {
   const [timeLeft, setTimeLeft] = useState(calculateTimeLeft());
 
   useEffect(() => {
+    if (timeLeft <= 0) return;
+
     const timer = setInterval(() => {
       setTimeLeft((prev) => {
         if (prev <= 1) {
@@ -28,7 +30,7 @@ export default function CountDownPage() {
     }, 1000);
 
     return () => clearInterval(timer);
-  }, []);
+  }, [timeLeft]);
 
   const formatTime = (seconds: number) => {
     const h = String(Math.floor(seconds / 3600)).padStart(2, "0");
@@ -53,7 +55,7 @@ export default function CountDownPage() {
           transition={{ delay: 1.4, duration: 0.3 }}
         />
 
-        <S.TimeLabel>남은시간</S.TimeLabel>
+        <S.TimeLabel>{timeLeft <= 0 ? "종료되었습니다" : "남은시간"}</S.TimeLabel>
 
         <S.CountText>
           <span className="time-part">{h}h</span>
