@@ -8,7 +8,7 @@ export default function CountDownPage() {
     const target = new Date();
 
     target.setDate(now.getDate() + 1);
-    target.setHours(14, 0, 0, 0);
+    target.setHours(11, 30, 0, 0);
 
     const diffInSeconds = Math.floor((target.getTime() - now.getTime()) / 1000);
     return diffInSeconds;
