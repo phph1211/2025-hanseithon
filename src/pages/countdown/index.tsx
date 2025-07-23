@@ -6,11 +6,9 @@ export default function CountDownPage() {
   const calculateTimeLeft = () => {
     const now = new Date();
     const target = new Date();
-    target.setHours(14, 0, 0, 0);
 
-    if (now >= target) {
-      target.setDate(target.getDate() + 1);
-    }
+    target.setDate(now.getDate() + 1);
+    target.setHours(14, 0, 0, 0);
 
     const diffInSeconds = Math.floor((target.getTime() - now.getTime()) / 1000);
     return diffInSeconds;
