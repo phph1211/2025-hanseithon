@@ -54,6 +54,9 @@ export default function CountDownPage() {
           animate={{ opacity: 1 }}
           transition={{ delay: 1.4, duration: 0.3 }}
         />
+
+        <S.TimeLabel>남은시간</S.TimeLabel>
+
         <S.CountText>
           <span className="time-part">{h}h</span>
           <span className="colon"> : </span>

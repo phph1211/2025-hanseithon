@@ -145,3 +145,16 @@ export const CountText = styled.div`
     }
   }
 `;
+
+export const TimeLabel = styled.p`
+  color: white;
+  font-size: 5rem;
+  font-weight: 200;
+  text-align: center;
+  margin-bottom: 1.2rem;
+
+  @media screen and (max-width: 767px) {
+    font-size: 1.8rem;
+    margin-bottom: 0.8rem;
+  }
+`;
